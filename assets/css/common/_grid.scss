@@ -18,5 +18,7 @@ $offset: 280px;
   }
 }
 #colors {
-  margin-left: $offset;
+  @include media-breakpoint-up(lg) {
+    margin-left: $offset;
+  }
 }

@@ -40,12 +40,19 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+@import "~/assets/css/common/_variables.scss";
+
 #colors-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6.25%, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(12.5%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(auto-fill, minmax(6.25%, 1fr));
+  }
+  // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
 </style>
