@@ -1,0 +1,12 @@
+[type="submit"],
+[type="button"],
+button,
+.btn {
+  border: 2px solid;
+  background-color: $brand-one;
+  border-color: $brand-one;
+  color: $brand-light;
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: 900;
+}

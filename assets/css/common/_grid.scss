@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+$offset: 280px;
+#navigation-main {
+  padding: $base-margin;
+  @include media-breakpoint-up(lg) {
+    padding: $base-margin * 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: $offset;
+    background-color: $brand-light;
+  }
+}
+#colors {
+  margin-left: $offset;
+}
