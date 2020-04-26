@@ -5,7 +5,7 @@ export const state = () => ({
 export const mutations = {
   addNotification(state, payload) {
     const notification = payload;
-    notification.id = state.notifications.length;
+    notification.id = Math.round((new Date()).getTime());
 
     state.notifications.push(notification);
   },

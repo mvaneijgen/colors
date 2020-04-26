@@ -1,5 +1,7 @@
 <template>
-  <colors :amount="amount" />
+  <keep-alive>
+    <colors :amount="amount" />
+  </keep-alive>
 </template>
 
 <script>
@@ -11,11 +13,12 @@ export default {
   },
   data() {
     return {
-      amount: 1024,
+      amount: 4096,
     };
   },
   created() {
     this.$store.dispatch("Colors/SET_COLOR_AMOUNT", this.amount);
+    console.warn(this.$store.state.Colors.currentAmount);
   },
 };
 </script>

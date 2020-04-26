@@ -2,11 +2,12 @@
   <div id="navigation-main">
     <div class="logo">
       <nuxt-link to="/">
-        <span>4.096</span>
+        <span>{{animatedNumber}}</span>
         <span>Colors</span>
       </nuxt-link>
     </div>
-
+    <nuxt-link to="/">Start</nuxt-link>
+    <nuxt-link to="/all">All colors</nuxt-link>
     <div class="intro small" v-html="$store.state.Default.description"></div>
     <div class="profile small">
       <div class="avatar">
@@ -23,6 +24,9 @@
 </template>
 
 <script>
+// import { gsap } from "gsap";
+import { TweenMax, TimelineMax } from "gsap";
+
 export default {
   name: "Navigation",
   components: {
@@ -31,16 +35,42 @@ export default {
   data() {
     return {
       me: this.$store.state.Default.me,
+      tweenedNumber: 0,
+      // currentAmount: this.$store.state.Colors.currentAmount,
     };
   },
   computed: {
-    getNavigationToggle() {
-      return this.$store.getters["ui/getNavigationToggle"];
+    getCurrentAmount() {
+      return this.$store.getters["Colors/getCurrentAmount"];
+    },
+    // Animate the number 💯 using GSAP
+    animatedNumber: function() {
+      return this.tweenedNumber.toFixed(0);
     },
   },
   methods: {
     updateNavigationToggle() {
       this.$store.commit("ui/updateNavigationToggle");
+    },
+    animate(newValue) {
+      TweenMax.to(this.$data, 0.5, { tweenedNumber: newValue });
+    },
+  },
+  mounted() {
+    this.animate;
+  },
+  watch: {
+    getCurrentAmount: {
+      immediate: true,
+      handler(newValue, oldValue) {
+        immediate: true, this.animate(newValue);
+      },
+    },
+    test: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        console.log(newVal, oldVal);
+      },
     },
   },
 };

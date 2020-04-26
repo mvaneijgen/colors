@@ -16,11 +16,6 @@ export default {
   components: {
     Notification,
   },
-  data() {
-    return {
-      title: "NotificationsContainer",
-    };
-  }, // End data
   computed: {
     ...mapGetters({
       getNotifications: "Notifications/getNotifications",
