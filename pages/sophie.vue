@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      amount: 4096,
+      amount: 1536,
     };
   },
   created() {

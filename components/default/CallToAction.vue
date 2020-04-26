@@ -3,10 +3,10 @@
     <div v-for="(cta, index) in callToActions" :key="index" class="alloy-cards cta" :data-cta-type="cta.type">
       <div class="inner">
         <p>
-          <strong></strong>
-          <span></span>
+          <strong>{{ cta.title }}</strong>
+          <span>{{ cta.description }}</span>
         </p>
-        <nuxt-link :to="cta.url" class="btn btn--small"></nuxt-link>
+        <nuxt-link v-if="cta.url" :to="cta.url" class="btn btn--small">{{ cta.cta }}</nuxt-link>
       </div>
     </div>
   </div>
@@ -36,6 +36,7 @@ export default {
   grid-row-gap: $base-margin;
 }
 .alloy-cards {
+  border-radius: 5px;
   &.cta {
     background-color: $brand-one;
     margin-bottom: $base-margin;

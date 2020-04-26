@@ -56,3 +56,14 @@ p {
 .small {
   font-size: 0.8rem;
 }
+a {
+  color: $brand-two;
+  &:hover {
+    color: $brand-three;
+  }
+  &:active,
+  &:focus {
+  }
+  &:visited {
+  }
+}

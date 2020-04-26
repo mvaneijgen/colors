@@ -1,7 +1,62 @@
 <template>
-  <footer>
-    <div class="inner">
+  <div class="page">
+    <div class="alloy-page alloy-page--content alloy-page--about">
+      <div class="alloy-conttent alloy-text-light">
+        <section>
+          <div class="alloy-col">
+            <h3>What is this?</h3>
+            <!-- <h5 v-html="this.$store..default.tagline"></h5> -->
+            <p>PC part picker, but for longboards.</p>
 
+            <p>Build & share your (dream) setup, too get feedback or just to show the world how awesome it is.</p>
+
+            <SpecialThanks />
+            <CallToAction />
+
+          </div>
+
+          <div class="alloy-col">
+            <h3>Road map</h3>
+            <p>Projects are never done! Therefore you’ll get to peek behind the scenes. This is my todo list:</p>
+            <ul>
+              <li v-for="(todo, index) in todos" :key="index">{{ todo.name }}</li>
+            </ul>
+            <h4>Want to help?</h4>
+            <p>Are you a Vue.js/Nuxt or Javascript developer?</p>
+            <nuxt-link to="/contact" class="btn btn--small">Shoot me a message</nuxt-link>
+
+            <h4>This site is hosted on Github Pages</h4>
+            <p>If you're looking for the source code or if you’re just interested to see how it's build you can take a look at the repository.</p>
+            <a :href="this.$store.state.Default.repo" class="btn btn--small">Github repo</a>
+          </div>
+
+          <h1>Contact</h1>
+
+          <p>
+            This site is entirely build and designed by me (
+            <a target="_blank" :href="this.$store.state.Default.me.url">Mitchel van Eijgen</a> ). The code can be found in the
+            <a target="_blank" href="https://github.com/mvaneijgen/longboardsetup">Github repository</a>, it's also being hosted on Github, with the help of
+            <a target="_blank" href="//pages.github.com">Github Pages</a>.
+          </p>
+          <p v-html="this.$store.state.Default.description"></p>
+          <p>
+            You can send me a message via
+            <a :href="`mailto:${this.$store.state.Default.me.email}`" v-html="this.$store.state.Default.me.email"></a> or contact me via any social network mentioned below here.
+          </p>
+        </section>
+        <section>
+          <ToolsUsed />
+        </section>
+        <section>
+          <SpecialThanks />
+        </section>
+        <section>
+          <h2>Help others by submitting products and complete the database of longboard products</h2>
+          <p>All items from the site are scraped from different resources and the list is by no means complete. There are multiple older decks or different variations that are not yet present in the current collection. If you are a longboard dealer (or enthusiastic) and are looking to add multiple products at once, please contact me through one of the options below.</p>
+          <br>
+          <CallToAction />
+        </section>
+      </div>
     </div>
     <div class="banana" @click="foundBanana" v-if="banana">
       <svg viewBox="0 0 27 23" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
@@ -16,27 +71,31 @@
         </g>
       </svg>
     </div>
-  </footer>
+    <!-- <Footer /> -->
+  </div>
 </template>
 
 <script>
-import CallToAction from "@/components/default/CallToAction.vue";
+import ToolsUsed from "@/components/default/ToolsUsed.vue";
 import SpecialThanks from "@/components/default/SpecialThanks.vue";
+import CallToAction from "@/components/default/CallToAction.vue";
+
+// import Footer from "@/components/Footer.vue";
 
 export default {
-  // props: ['item'],
-  name: "Footer",
-  components: {
-    CallToAction,
-    SpecialThanks,
-  },
+  transition: "page-alt",
   data() {
     return {
-      title: "Footer",
       todos: this.$store.state.Default.todos,
       banana: true,
     };
-  }, // End data
+  },
+  components: {
+    ToolsUsed,
+    SpecialThanks,
+    CallToAction,
+    // Footer
+  },
   methods: {
     foundBanana: function() {
       this.banana = false;

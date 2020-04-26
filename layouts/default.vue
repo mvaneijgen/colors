@@ -1,14 +1,17 @@
 <template>
   <div class="alloy-layout-default">
     <Navigation />
-    <nuxt />
+    <main>
+      <nuxt />
+      <!-- <Footer /> -->
+    </main>
     <NotificationsContainer />
-    <Footer />
+
   </div>
 </template>
 <script>
 import Navigation from "@/components/default/Navigation.vue";
-import Footer from "@/components/default/Footer.vue";
+// import Footer from "@/components/default/Footer.vue";
 import NotificationsContainer from "@/components/default/NotificationsContainer.vue";
 
 export default {
@@ -26,7 +29,7 @@ export default {
   components: {
     Navigation,
     NotificationsContainer,
-    Footer,
+    // Footer,
   },
   // mounted() {
   //   const notification = {

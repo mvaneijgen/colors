@@ -1,8 +1,9 @@
 export const state = () => ({
   title: "4.096",
   tagline: "Colors",
-  url: "https://mvaneijgen.nl/4096colors",
+  url: "https://mvaneijgen.nl/colors",
   api: "",
+  repo: "https://github.com/mvaneijgen/colors",
   // description: "",
   description: `
     <p>In the #HEX color format there are an overwelming number of colors, more than 16 milion that is!</p>
@@ -29,14 +30,14 @@ export const state = () => ({
     phone: "06 38 63 27 35",
     address: "Lange Herenvest 122<br/>2011 BX Haarlem",
     social: {
-      twitter_username: "mvaneijgen",
-      github_username: "mvaneijgen",
-      linkedin_username: "mvaneijgen",
-      codepen_username: "mvaneijgen",
-      reddit_username: "mvaneijgen",
+      twitter: "mvaneijgen",
+      github: "mvaneijgen",
+      linkedin: "mvaneijgen",
+      codepen: "mvaneijgen",
+      reddit: "mvaneijgen",
     },
     avatar: 'http://0.gravatar.com/avatar/8a68ce0259bbb16411035e487ecb27c5',
-    url: "https://mvaneijgen.nl",
+    url: "mvaneijgen.nl",
   },
   //------------------------------------------------------//
   // Tools {object}
@@ -49,13 +50,13 @@ export const state = () => ({
       url: "https://vuejs.org",
       image: "vue.png",
     },
-    {
-      title: "Wordpress",
-      about:
-        "And then in particular, the Wordpress Rest API. This hosts all this app its data.",
-      url: "https://wordpress.org",
-      image: "wordpress.png",
-    },
+    // {
+    //   title: "Wordpress",
+    //   about:
+    //     "And then in particular, the Wordpress Rest API. This hosts all this app its data.",
+    //   url: "https://wordpress.org",
+    //   image: "wordpress.png",
+    // },
     {
       title: "Greensock",
       about: "For all these awesome SVG animations.",
@@ -68,49 +69,50 @@ export const state = () => ({
       url: "https://pages.github.com",
       image: "github-pages.png",
     },
-    {
-      title: "Sketch",
-      about:
-        "All UI sketches were first drawn in Sketch to get a feel for the general layout and figure out what components need to be realized.",
-      url: "https://www.sketchapp.com",
-      image: "sketch.png",
-    },
-    {
-      title: "Affinity Designer",
-      about:
-        "Most of the SVG on the site are hand drawn using Affinity Designer. A great alternative if you don't want to be locked in to the Adobe suite.",
-      url: "https://affinity.serif.com/designer/",
-      image: "affinity-designer.png",
-    },
+    // {
+    //   title: "Sketch",
+    //   about:
+    //     "All UI sketches were first drawn in Sketch to get a feel for the general layout and figure out what components need to be realized.",
+    //   url: "https://www.sketchapp.com",
+    //   image: "sketch.png",
+    // },
+    // {
+    //   title: "Affinity Designer",
+    //   about:
+    //     "Most of the SVG on the site are hand drawn using Affinity Designer. A great alternative if you don't want to be locked in to the Adobe suite.",
+    //   url: "https://affinity.serif.com/designer/",
+    //   image: "affinity-designer.png",
+    // },
   ],
   //------------------------------------------------------//
   // Site call to actions
   //------------------------------------------------------//
   callToActions: [
     {
-      title: "Are there any products you’re missing?",
+      title: "Are you missing a feature?",
       description:
-        "Help the community by uploading missing items to fill up the database.",
-      cta: "Upload your own",
+        "Leave an issue on Github",
       type: "cta--alt",
-      url: "/submit",
+      // cta: "Upload your own",
+      // url: "/submit",
+      externalurl: "/submit",
     },
-    {
-      title: "Have multiple products to add?",
-      description:
-        "If you have a large collection of products, we wil help you by adding them all at once.Just get in contact with us.",
-      cta: "Contact",
-      type: "",
-      url: "/submit",
-    },
-    {
-      title: "Want to help moderate this site?",
-      description:
-        "If you want to help making this site even better, I would love to hear from you. Just shoot me a message!",
-      cta: "Contact",
-      type: "",
-      url: "/contact",
-    },
+    // {
+    //   title: "Have multiple products to add?",
+    //   description:
+    //     "If you have a large collection of products, we wil help you by adding them all at once.Just get in contact with us.",
+    //   cta: "Contact",
+    //   type: "",
+    //   url: "/submit",
+    // },
+    // {
+    //   title: "Want to help moderate this site?",
+    //   description:
+    //     "If you want to help making this site even better, I would love to hear from you. Just shoot me a message!",
+    //   cta: "Contact",
+    //   type: "",
+    //   url: "/contact",
+    // },
   ],
   //------------------------------------------------------//
   // Longboard communities

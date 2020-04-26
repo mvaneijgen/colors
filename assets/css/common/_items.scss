@@ -1,0 +1,91 @@
+.alloy-items {
+  cursor: pointer;
+  transition: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  box-shadow: 2px 2px 30px 0 rgba($brand-dark, $base-alpha/2);
+
+  &:hover {
+    transform: scale(1.03);
+  }
+  .alloy-content {
+    pointer-events: none;
+
+    padding: 10px;
+    @include media-breakpoint-up(lg) {
+      // @media only screen and (min-width: $alloy-md-mq) {
+      padding: $base-margin;
+    }
+    color: #eee;
+    // background-color: rgba($brand-light, 0.3);
+    // background-color: red !important;
+    // color: $brand-light;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+
+    // Toggle stuffalign-content
+    p {
+      margin: 0;
+    }
+    a {
+      color: $brand-light;
+      line-height: 1em;
+      float: left;
+    }
+    .alloy-meta {
+      text-transform: capitalize;
+    }
+    .alloy-meta,
+    a {
+      font-size: 0.8rem;
+      @include media-breakpoint-down(xs) {
+        font-size: 10px;
+      }
+    }
+    h3 {
+      @include media-breakpoint-down(sm) {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(xs) {
+        font-size: 13px;
+      }
+    }
+    h6 {
+      text-transform: uppercase;
+      margin: 0;
+      // @include media-breakpoint-down(sm) {
+      //   margin-bottom: 5px;
+      // }
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+    .report {
+      float: right;
+    }
+  }
+  &[data-view="simple"] {
+    .alloy-meta {
+      font-size: 14px;
+    }
+    h3 {
+      font-size: inherit !important;
+    }
+  }
+  button {
+    position: absolute;
+    bottom: $base-margin;
+    right: $base-margin;
+  }
+  // END Toggle stuffalign-content
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}

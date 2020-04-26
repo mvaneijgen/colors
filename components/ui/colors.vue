@@ -39,9 +39,7 @@ export default {
     // Infinity scroll
     //------------------------------------------------------//
     itemsinfIniteScroll() {
-      console.warn("banaan");
       window.addEventListener("scroll", () => {
-        console.warn("appel");
         const docHeight = document.documentElement.offsetHeight;
         const scrollTop = Math.max(
           window.pageYOffset,
